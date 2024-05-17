@@ -21,7 +21,7 @@ app="${INPUT_NAME:-pr-$PR_NUMBER-$GITHUB_REPOSITORY_OWNER-$GITHUB_REPOSITORY_NAM
 # Change underscores to hyphens.
 app="${app//_/-}"
 # to lowercase
-app=echo "$app" | tr '[:upper:]' '[:lower:]'
+app=$(echo "$app" | tr '[:upper:]' '[:lower:]')
 region="${INPUT_REGION:-${FLY_REGION:-iad}}"
 org="${INPUT_ORG:-${FLY_ORG:-personal}}"
 image="$INPUT_IMAGE"
