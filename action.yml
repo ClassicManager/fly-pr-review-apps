@@ -8,6 +8,10 @@ runs:
   using: "docker"
   image: "Dockerfile"
 inputs:
+  dockerfile:
+    description: Dockerfile to use if there is a custom one outside of the root repository
+  buildTarget:
+    description: Build target to use over the dockerfile
   name:
     description: Fly app name
   image:
