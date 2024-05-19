@@ -26,7 +26,7 @@ region="${INPUT_REGION:-${FLY_REGION:-iad}}"
 org="${INPUT_ORG:-${FLY_ORG:-personal}}"
 image="$INPUT_IMAGE"
 config="${INPUT_CONFIG:-fly.toml}"
-buildArgs=$(echo "$INPUT_BUILDARG" | sed 's/[^ ]\+/"--build-arg &"/g' | sed 's/"/ /g')
+buildArgs=$(echo "$INPUT_BUILDARG" | sed 's/[^ ]\+/"--build-arg &"/g' | tr -d '\n' | sed 's/--build-arg/ --build-arg/g')
 
 if ! echo "$app" | grep "$PR_NUMBER"; then
   echo "For safety, this action requires the app's name to contain the PR number."
