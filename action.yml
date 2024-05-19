@@ -12,6 +12,8 @@ inputs:
     description: Dockerfile to use if there is a custom one outside of the root repository
   buildTarget:
     description: Build target to use over the dockerfile
+  buildArg:
+    description: Build Args to be used in the docker build. Separate multiple build args with a space
   name:
     description: Fly app name
   image:

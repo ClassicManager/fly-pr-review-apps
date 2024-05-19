@@ -12,6 +12,7 @@ If you have an existing `fly.toml` in your repo, this action will copy it with a
 | ----------   | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dockerfile` | Custom location of the Dockerfile to build the app
 | `buildTarget`| Target to use when build a new Image from your custom Dockerfile
+| `buildArg`   | Build Args to be used in the docker build. Separate multiple build args with a space
 | `name`       | The name of the Fly app. Alternatively, set the env `FLY_APP`. For safety, must include the PR number. Example: `myapp-pr-${{ github.event.number }}`. Defaults to `pr-{number}-{repo_org}-{repo_name}`. |
 | `image`      | Optional pre-existing Docker image to use                                                                                                                                                                |
 | `config`     | Optional path to a custom Fly toml config. Config path should be relative to `path` parameter, if specified.                                                                                             |
